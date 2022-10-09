@@ -1,0 +1,395 @@
+<h3>Create Waybill</h3>
+<hr>
+
+<form [formGroup]="waybillForm">
+  <mat-accordion>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Receiver Informations
+        </mat-panel-title>
+        <mat-panel-description>
+          Click for details
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <div class="row">
+        <div class="col-6">
+
+          <label for="">Tckn</label>
+          <input formControlName="aliciTckn" type="text" class="form-control"><br>
+          <mat-error
+            *ngIf="waybillForm.get('aliciTckn')?.hasError('required') && waybillForm.controls['aliciTckn']?.touched">
+            Tckn field is required* </mat-error>
+          <mat-error
+            *ngIf="waybillForm.get('aliciTckn')?.hasError('minlength') && waybillForm.controls['aliciTckn']?.touched">
+            Tckn must be at least 11 characters* </mat-error>
+          <mat-error
+            *ngIf="waybillForm.get('aliciTckn')?.hasError('maxlength') && waybillForm.controls['aliciTckn']?.touched">
+            Tckn must be a maximum of 11 characters* </mat-error>
+
+            <br>
+
+          <label for="">Title</label>
+          <input formControlName="aliciUnvan" type="text" class="form-control"><br>
+          <mat-error
+            *ngIf="waybillForm.get('aliciUnvan')?.hasError('required') && waybillForm.controls['aliciUnvan']?.touched">
+            Title field is required*</mat-error>
+
+            <br>
+            
+          <label for="">Mail Box</label>
+          <input formControlName="aliciPostaKutusu" type="text" class="form-control"><br>
+
+          <label for="">Tax Administration</label>
+          <input formControlName="aliciVergiDairesi" type="text" class="form-control"><br>
+          <mat-error
+            *ngIf="waybillForm.get('aliciVergiDairesi')?.hasError('required') && waybillForm.controls['aliciVergiDairesi']?.touched">
+            Tax Administration field is required*</mat-error>
+
+        </div>
+
+        <div class="col-6">
+          <label for="">Email</label>
+          <input formControlName="aliciEposta" type="email" class="form-control"><br>
+          <mat-error
+            *ngIf="waybillForm.get('aliciEposta')?.hasError('required') && waybillForm.controls['aliciEposta']?.touched">
+            Email is required*</mat-error>
+          <mat-error
+            *ngIf="waybillForm.get('aliciEposta')?.hasError('email') && waybillForm.controls['aliciEposta']?.touched">
+            Email format is not correct*</mat-error>
+
+            <br>
+
+          <label for="">Phone</label>
+          <input formControlName="aliciTelefon" type="text" class="form-control"><br>
+          <mat-error
+            *ngIf="waybillForm.get('aliciTelefon')?.hasError('required') && waybillForm.controls['aliciTelefon']?.touched">
+            Phone is required*</mat-error>
+          <mat-error
+            *ngIf="waybillForm.get('aliciTelefon')?.hasError('minlength') && waybillForm.controls['aliciTelefon']?.touched">
+            Phone must be at least 11 characters</mat-error>
+
+            <br>
+
+          <label for="">Fax</label>
+          <input formControlName="aliciFaks" type="text" class="form-control"><br>
+
+          <label for="">Website</label>
+          <input formControlName="aliciWebSitesi" type="text" class="form-control"><br>
+
+        </div>
+
+      </div>
+
+
+    </mat-expansion-panel>
+
+    <br>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Address Info
+        </mat-panel-title>
+        <mat-panel-description>
+          Click for details
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <div class="row">
+        <div class="col-6">
+
+          <label for="">Country</label>
+          <input formControlName="aliciUlke" type="text" class="form-control"><br>
+          <mat-error
+            *ngIf="waybillForm.get('aliciUlke')?.hasError('required') && waybillForm.controls['aliciUlke']?.touched">
+            Country field is required*</mat-error>
+
+             <br>
+
+          <label for="">City</label>
+          <input formControlName="aliciSehir" type="text" class="form-control"><br>
+          <mat-error
+            *ngIf="waybillForm.get('aliciSehir')?.hasError('required') && waybillForm.controls['aliciSehir']?.touched">
+            City field is required*</mat-error>
+
+             <br>
+
+          <label for="">District</label>
+          <input formControlName="aliciIlce" type="text" class="form-control"><br>
+          <mat-error
+            *ngIf="waybillForm.get('aliciIlce')?.hasError('required') && waybillForm.controls['aliciIlce']?.touched">
+            District field is required*</mat-error>
+
+             <br>
+
+          <label for="">Village</label>
+          <input formControlName="aliciKasaba" type="text" class="form-control"><br>
+          <mat-error
+            *ngIf="waybillForm.get('aliciKasaba')?.hasError('required') && waybillForm.controls['aliciKasaba']?.touched">
+            Village field is required*</mat-error>
+
+        </div>
+
+        <div class="col-6">
+          <label for="">Street</label>
+          <input formControlName="aliciCadde" type="text" class="form-control"><br>
+          <mat-error
+            *ngIf="waybillForm.get('aliciCadde')?.hasError('required') && waybillForm.controls['aliciCadde']?.touched">
+            Street field is required*</mat-error>
+
+             <br>
+
+          <label for="">Post Code</label>
+          <input formControlName="aliciPostaKodu" type="text" class="form-control"><br>
+          <mat-error
+            *ngIf="waybillForm.get('aliciPostaKodu')?.hasError('required') && waybillForm.controls['aliciPostaKodu']?.touched">
+            Post code field is required</mat-error>
+
+             <br>
+
+          <label for="">Building Name</label>
+          <input formControlName="aliciBinaAdi" type="text" class="form-control"><br>
+          <mat-error
+            *ngIf="waybillForm.get('aliciBinaAdi')?.hasError('required') && waybillForm.controls['aliciBinaAdi']?.touched">
+            Building name field is required*</mat-error>
+
+          <div class="row">
+            <div class="col-6">
+
+              <label for="">Building No</label>
+              <input formControlName="aliciBinaNo" type="text" class="form-control"><br>
+              <mat-error
+                *ngIf="waybillForm.get('aliciBinaNo')?.hasError('required') && waybillForm.controls['aliciBinaNo']?.touched">
+                Building no field is required*</mat-error>
+
+            </div>
+            <div class="col-6">
+              <label for="">Door No</label>
+              <input formControlName="aliciKapiNo" type="text" class="form-control"><br>
+              <mat-error
+                *ngIf="waybillForm.get('aliciKapiNo')?.hasError('required') && waybillForm.controls['aliciKapiNo']?.touched">
+                Door no field is required*</mat-error>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </mat-expansion-panel>
+
+    <br>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Submitter Information
+        </mat-panel-title>
+        <mat-panel-description>
+          Click for details
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <div class="row">
+        <div class="col-6">
+
+          <label for="">Full Name</label>
+          <input formControlName="teslimEdenAdSoyad" type="text" class="form-control"><br>
+          <mat-error
+            *ngIf="waybillForm.get('teslimEdenAdSoyad')?.hasError('required') && waybillForm.controls['teslimEdenAdSoyad']?.touched">
+            Full name is required*</mat-error>
+
+            <br>
+
+          <label for="">Tckn</label>
+          <input formControlName="teslimEdenTckn" type="text" class="form-control"><br>
+          <mat-error
+            *ngIf="waybillForm.get('teslimEdenTckn')?.hasError('required') && waybillForm.controls['teslimEdenTckn']?.touched">
+            Tckn is required*</mat-error>
+
+        </div>
+
+        <div class="col-6">
+          <label for="">Email</label>
+          <input formControlName="teslimEdenEposta" type="text" class="form-control"><br>
+          <mat-error
+            *ngIf="waybillForm.get('teslimEdenEposta')?.hasError('required') && waybillForm.controls['teslimEdenEposta']?.touched">
+            Email is required*</mat-error>
+          <mat-error
+            *ngIf="waybillForm.get('teslimEdenEposta')?.hasError('email') && waybillForm.controls['teslimEdenEposta']?.touched">
+            Email format is not correct</mat-error>
+
+            <br>
+
+          <label for="">Phone</label>
+          <input formControlName="teslimEdenTelefon" type="text" class="form-control"><br>
+          <mat-error
+            *ngIf="waybillForm.get('teslimEdenTelefon')?.hasError('required') && waybillForm.controls['teslimEdenTelefon']?.touched">
+            Phone is required*</mat-error>
+
+        </div>
+
+      </div>
+
+    </mat-expansion-panel>
+
+    <br>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Product Service List
+        </mat-panel-title>
+        <mat-panel-description>
+          Click for details
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <button mat-raised-button color="primary" data-toggle="modal" data-target="#waybillModal">Add</button>
+
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#id</th>
+            <th scope="col">Product / Service</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Unit</th>
+            <th scope="col">Unit Amount</th>
+            <th scope="col">KDV</th>
+            <th scope="col">KDV Amount</th>
+            <th scope="col">Total Amount</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of serviceList">
+            <td>{{item.id}}</td>
+            <td>{{item.goodsService}}</td>
+            <td>{{item.quantity}}</td>
+            <td>{{item.unit}}</td>
+            <td>{{item.unitPrice}}</td>
+            <td>{{item.kdvRate}}</td>
+            <td>{{item.kdvPrice}}</td>
+            <td>{{item.totalPrice}}</td>
+            <td>
+              <mat-icon>delete_outline</mat-icon>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="modal fade" id="waybillModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <form [formGroup]="waybillGoodsServiceForm">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Goods Service</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+
+                <label for="">Products / Service</label>
+                <input formControlName="goodsService" type="text" class="form-control">
+                <mat-error
+                  *ngIf="waybillGoodsServiceForm.get('goodsService')?.hasError('required') && waybillGoodsServiceForm.controls['goodsService']?.touched">
+                  Products / Service field is required*</mat-error>
+                <br>
+
+                <label for="">Quantity</label>
+                <input formControlName="quantity" type="text" class="form-control">
+                <mat-error
+                  *ngIf="waybillGoodsServiceForm.get('quantity')?.hasError('required') && waybillGoodsServiceForm.controls['quantity']?.touched">
+                  Quantity field is required*</mat-error>
+                <br>
+
+                <label for="">Unit</label>
+                <input formControlName="unit" type="text" class="form-control">
+                <mat-error
+                  *ngIf="waybillGoodsServiceForm.get('unit')?.hasError('required') && waybillGoodsServiceForm.controls['unit']?.touched">
+                  Unit field is required*</mat-error>
+                <br>
+
+                <label for="">Unit Amount</label>
+                <input formControlName="unitPrice" type="text" class="form-control">
+                <mat-error
+                  *ngIf="waybillGoodsServiceForm.get('unitPrice')?.hasError('required') && waybillGoodsServiceForm.controls['unitPrice']?.touched">
+                  Unit amount field is required*</mat-error>
+                <br>
+
+                <label for="">KDV </label>
+                <input formControlName="kdvRate" type="text" class="form-control">
+                <mat-error
+                  *ngIf="waybillGoodsServiceForm.get('kdvRate')?.hasError('required') && waybillGoodsServiceForm.controls['kdvRate']?.touched">
+                  KDV field is required*</mat-error>
+                <br>
+
+                <label for="">KDV Amount</label>
+                <input formControlName="kdvPrice" type="text" class="form-control">
+                <mat-error
+                  *ngIf="waybillGoodsServiceForm.get('kdvPrice')?.hasError('required') && waybillGoodsServiceForm.controls['kdvPrice']?.touched">
+                  KDV amount field is required*</mat-error>
+                <br>
+
+                <label for="">Total Amount</label>
+                <input formControlName="totalPrice" type="text" class="form-control">
+                <mat-error
+                  *ngIf="waybillGoodsServiceForm.get('totalPrice')?.hasError('required') && waybillGoodsServiceForm.controls['totalPrice']?.touched">
+                  Total amount is required*</mat-error>
+                <br>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button (click)="addWaybillService()" type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+    </mat-expansion-panel>
+
+    <br>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Notes
+        </mat-panel-title>
+        <mat-panel-description>
+          Click for details
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+
+      <ul>
+        <li *ngFor="let note of notes">{{note.title}}</li>
+      </ul>
+
+
+      <form [formGroup]="waybillNotes">
+        <div class="row">
+          <div class="col-8">
+            <textarea formControlName="title" class="form-control"></textarea>
+
+          </div>
+
+          <div class="col-4">
+            <button (click)="addWaybillNote()" mat-raised-button color="primary">Add</button>
+          </div>
+        </div>
+      </form>
+
+
+    </mat-expansion-panel>
+
+  </mat-accordion>
+  <br>
+  <button (click)="createWaybill()" mat-raised-button color="primary">Create Waybill</button>
+</form>

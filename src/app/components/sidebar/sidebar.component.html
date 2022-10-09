@@ -1,0 +1,149 @@
+<div style="display: flex" class="wrapper">
+    <nav id="sidebar">
+        <img src="../../../assets/images/angular.png" width="45" height="45" alt="">
+        <h2 class="mt-1" style="display: inline-block">NGULAR INVOICE PANEL</h2>
+
+
+        <ul class="list-unstyled components">
+
+            <li>
+                <a routerLink="/">
+                    <mat-icon>home</mat-icon>Homepage
+                </a>
+            </li>
+
+            <!-- fatura işlemleri -->
+
+            <li>
+                <a href="#faturaIslemleri" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <mat-icon>file_copy</mat-icon>Invoice Processing
+                </a>
+                <ul class="collapse list-unstyled" id="faturaIslemleri">
+                    <li>
+                        <a routerLink="/fatura-islemleri/fatura-olustur">
+                            <mat-icon>create</mat-icon>Create Invoice
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="/fatura-islemleri/giden-fatura-listesi">
+                            <mat-icon>list</mat-icon>Outgoing Invoice List
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="/fatura-islemleri/gelen-fatura-listesi">
+                            <mat-icon>list</mat-icon>Incoming Invoice List
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+
+            <!-- fatura arşiv işlemleri -->
+
+            <li>
+                <a href="#faturaArsivIslemleri" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <mat-icon>archive</mat-icon>Archive Invoice Transactions
+                </a>
+                <ul class="collapse list-unstyled" id="faturaArsivIslemleri">
+                    <li>
+                        <a routerLink="/arsiv-fatura-islemleri/arsiv-gelen-fatura-listesi">
+                            <mat-icon>list</mat-icon>Archive Incoming Invoice List
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="/arsiv-fatura-islemleri/arsiv-giden-fatura-listesi">
+                            <mat-icon>list</mat-icon>Archive Outgoing Invoice List
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <!-- irsaliye işlemleri -->
+
+            <li>
+                <a href="#irsaliyeIslemleri" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <mat-icon> attach_file</mat-icon>Waybill Transactions
+                </a>
+                <ul class="collapse list-unstyled" id="irsaliyeIslemleri">
+                    <li>
+                        <a routerLink="/irsaliye-islemleri/irsaliye-olustur">
+                            <mat-icon>create</mat-icon> Create Waybill
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="/irsaliye-islemleri/gelen-irsaliye-listesi">
+                            <mat-icon>list</mat-icon> Incoming Waybill List
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="/irsaliye-islemleri/giden-irsaliye-listesi">
+                            <mat-icon>list</mat-icon> Outgoing Waybill List
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <!-- irsaliye arşiv işlemleri -->
+
+            <li>
+                <a href="#arsivIrsaliyeIslemleri" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <mat-icon>unarchive</mat-icon>Archive Waybill Transactions
+                </a>
+                <ul class="collapse list-unstyled" id="arsivIrsaliyeIslemleri">
+                    <li>
+                        <a routerLink="/arsiv-irsaliye-islemleri/arsiv-gelen-irsaliye-listesi">
+                            <mat-icon>list</mat-icon>Archive Incoming Waybill List
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="/arsiv-irsaliye-islemleri/arsiv-giden-irsaliye-listesi">
+                            <mat-icon>list</mat-icon>Archive Outgoing Waybill List
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="fas fa-align-justify"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li key="item.id">
+                            <a style="margin-right: 20px" href="#pageSubmenu" data-toggle="collapse"
+                                aria-expanded="false" class="dropdown-toggle">
+                                <mat-icon>settings</mat-icon>Settings
+                            </a>
+                            <ul class="collapse list-unstyled" id="pageSubmenu">
+                                <li>
+                                    <a routerLink="/hesap-ayarlari" style="background-color: white" href="#">
+                                        <mat-icon>account_circle</mat-icon>My Profile
+                                    </a>
+                                </li>
+                                <li>
+                                    <a style="background-color: white; cursor: pointer;">
+                                        <mat-icon>power_settings_new</mat-icon>Logout
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <router-outlet></router-outlet>
+
+    </div>
+</div>

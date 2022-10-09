@@ -1,0 +1,434 @@
+<h2>Create Invoice</h2>
+<hr>
+
+<form [formGroup]="createInvoiceForm">
+    <mat-accordion>
+        <mat-expansion-panel  hideToggle>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Invoice Information
+                </mat-panel-title>
+                <mat-panel-description>
+                    Click for details
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <label>Scenario Type: </label>
+            <select formControlName="scenarioType" class="form-control form-control-sm">
+                <option [selected]="'Select Scenari Type'" value="Select Scenari Type" disabled>Select Scenari Type
+                </option>
+                <option value="Basis">Basis</option>
+                <option value="Commercial">Commercial</option>
+                <option value="Passenger Together">Passenger Together</option>
+                <option value="Export">Export</option>
+                <option value="Public">Public</option>
+            </select>
+            <mat-error
+                *ngIf="createInvoiceForm.get('scenarioType')?.hasError('required') && createInvoiceForm.controls['scenarioType']?.touched">
+                Scenario Type is required*</mat-error><br>
+            <br>
+
+            <label>Invoice Type:</label>
+            <select formControlName="invoiceType" class="form-control form-control-sm">
+                <option [selected]="'Select Invoice Type'" value="Select Invoice Type" disabled>Select Invoice Type
+                </option>
+                <option value="Sales">Sales</option>
+                <option value="Return">Return</option>
+                <option value="Exceptional">Exceptional</option>
+                <option value="With Holding">With Holding</option>
+                <option value="Private Base">Private Base</option>
+                <option value="Export Registered">Export Registered</option>
+            </select>
+
+            <mat-error
+                *ngIf="createInvoiceForm.get('invoiceType')?.hasError('required') && createInvoiceForm.controls['invoiceType']?.touched">
+                Invoice Type is required*</mat-error><br>
+            <br>
+
+            <div class="row">
+                <div class="col-6">
+                    <label for="">Invoice Date</label>
+                    <input formControlName="invoiceDate" class="form-control" type="date">
+                    <mat-error
+                        *ngIf="createInvoiceForm.get('invoiceDate')?.hasError('required') && createInvoiceForm.controls['invoiceDate']?.touched">
+                        Invoice Date is required*</mat-error><br>
+                </div>
+                <div class="col-6">
+                    <label for="">Currency Unit</label>
+                    <select formControlName="currencyUnit" class="form-control form-control-sm">
+                        <option disabled [selected]="'Select Currency Unit'" value="Select Currency Unit">Select
+                            Currency Unit</option>
+                        <option>TRY</option>
+                        <option>USD</option>
+                        <option>EUR</option>
+                    </select>
+
+                    <mat-error
+                        *ngIf="createInvoiceForm.get('currencyUnit')?.hasError('required') && createInvoiceForm.controls['currencyUnit']?.touched">
+                        Currency Unit is required*</mat-error><br>
+                </div>
+            </div>
+
+        </mat-expansion-panel>
+
+        <br>
+
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Buyer Information
+                </mat-panel-title>
+                <mat-panel-description>
+                    Click for details
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <div class="row">
+                <div class="col-6">
+                    <label for="">TCKN</label>
+                    <input formControlName="tckn" type="text" class="form-control">
+
+                    <mat-error
+                        *ngIf="createInvoiceForm.get('tckn')?.hasError('required') && createInvoiceForm.controls['tckn']?.touched">
+                        TCKN is required*</mat-error>
+
+                    <mat-error
+                        *ngIf="createInvoiceForm.get('tckn')?.hasError('minlength') && createInvoiceForm.controls['tckn']?.touched">
+                        TCKN must be at least 11 characters*</mat-error>
+
+                    <mat-error
+                        *ngIf="createInvoiceForm.get('tckn')?.hasError('maxlength') && createInvoiceForm.controls['tckn']?.touched">
+                        TCKN must be a maximum 11 characters*</mat-error>
+                </div>
+
+                <div class="col-6">
+                    <label for="">Appellation</label>
+                    <input formControlName="appellation" type="text" class="form-control">
+                    <mat-error
+                        *ngIf="createInvoiceForm.get('appellation')?.hasError('required') && createInvoiceForm.controls['appellation']?.touched">
+                        Appellation is required*</mat-error><br>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col-6">
+                    <label for="">Post Box</label>
+                    <select formControlName="postBox" class="form-control form-control-sm">
+                        <option>Home</option>
+                        <option>Workplace</option>
+                    </select>
+                    <mat-error
+                        *ngIf="createInvoiceForm.get('postBox')?.hasError('required') && createInvoiceForm.controls['postBox']?.touched">
+                        Post Box is required*</mat-error><br>
+                </div>
+                <div class="col-6">
+                    <label for="">Tax Administration</label>
+                    <input formControlName="taxAdministration" type="text" class="form-control">
+                    <mat-error
+                        *ngIf="createInvoiceForm.get('taxAdministration')?.hasError('required') && createInvoiceForm.controls['taxAdministration']?.touched">
+                        Tax Administration is required*</mat-error>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col-6">
+                    <label for="">Email</label>
+                    <input formControlName="email" type="email" class="form-control">
+                    <mat-error
+                        *ngIf="createInvoiceForm.get('email')?.hasError('required') && createInvoiceForm.controls['email']?.touched">
+                        Email is required*</mat-error><br>
+                    <mat-error
+                        *ngIf="createInvoiceForm.get('email')?.hasError('required') && createInvoiceForm.controls['email']?.touched">
+                        Email format is not correct*</mat-error><br>
+
+                </div>
+                <div class="col-6">
+                    <label for="">Phone</label>
+                    <input formControlName="phone" type="text" class="form-control">
+                    <mat-error
+                        *ngIf="createInvoiceForm.get('phone')?.hasError('required') && createInvoiceForm.controls['phone']?.touched">
+                        Phone Number is required*</mat-error><br>
+                    <mat-error
+                        *ngIf="createInvoiceForm.get('phone')?.hasError('minlength') && createInvoiceForm.controls['phone']?.touched">
+                        Phone Number must be at least 11 characters*</mat-error><br>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col-6">
+                    <label for="">Fax</label>
+                    <input formControlName="fax" placeholder="If available, enter your fax number" type="phone"
+                        class="form-control">
+                </div>
+                <div class="col-6">
+                    <label for="">Website</label>
+                    <input formControlName="website" placeholder="If applicable, enter your website address" type="text"
+                        class="form-control">
+                </div>
+            </div>
+
+        </mat-expansion-panel>
+
+        <br>
+
+        <mat-expansion-panel >
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Waybill Information
+                </mat-panel-title>
+                <mat-panel-description>
+                    Click for details
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <div class="row">
+                <div class="col-7">
+
+                    <label for="">Waybill List</label>
+
+                    <table class="table table-hover table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Waybill No</th>
+                                <th scope="col">Waybill Date</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let waybill of waybillList">
+                                <th>{{waybill.waybillNo}}</th>
+                                <td>{{waybill.waybillDate}}</td>
+                                <td>
+                                    <button style="border: none">
+                                        <mat-icon type="button" class="mr-2" data-toggle="tooltip" data-placement="top"
+                                            title="Edit Waybill">edit</mat-icon>
+                                    </button>
+
+                                    <button (click)="deleteInvoiceWaybill(waybill.waybillNo)" style="border: none">
+                                        <mat-icon type="button" class="mr-2" data-toggle="tooltip" data-placement="top"
+                                            title="Delete Waybill">delete_outline</mat-icon>
+                                    </button>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="col-5">
+                    <form [formGroup]="waybillForm">
+                        <label for="">Waybill No</label>
+                        <input formControlName="waybillNo" type="text" class="form-control">
+                        <mat-error
+                            *ngIf="waybillForm.get('waybillNo')?.hasError('required') && waybillForm.controls['waybillNo']?.touched">
+                            Waybill No is required*</mat-error><br>
+
+                        <label for="">Waybill Date</label>
+                        <div class="row">
+                            <div class="col-9">
+                                <input formControlName="waybillDate" type="date" class="form-control">
+                                <mat-error
+                                    *ngIf="waybillForm.get('waybillDate')?.hasError('required') && waybillForm.controls['waybillDate']?.touched">
+                                    Waybill Date is required*</mat-error><br>
+                            </div>
+                            <div class="col-3">
+                                <button (click)="createWaybill()" mat-raised-button color="primary">Add</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </mat-expansion-panel>
+
+        <br>
+
+        <mat-expansion-panel >
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Goods Service List
+                </mat-panel-title>
+                <mat-panel-description>
+                    Click for details
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add</button>
+            <hr>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#id</th>
+                        <th scope="col">Product / Service</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Unit</th>
+                        <th scope="col">Unit Amount</th>
+                        <th scope="col">KDV</th>
+                        <th scope="col">KDV Amount</th>
+                        <th scope="col">Total Amount</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let goodsService of goodsServiceList">
+                        <td>{{goodsService.id}}</td>
+                        <td>{{goodsService.goodsService}}</td>
+                        <td>{{goodsService.quantity}}</td>
+                        <td>{{goodsService.unit}}</td>
+                        <td>{{goodsService.unitPrice | currency}}</td>
+                        <td>{{goodsService.kdvRate}}</td>
+                        <td>{{goodsService.kdvPrice | currency}}</td>
+                        <td>{{goodsService.totalPrice | currency}}</td>
+                        <td>
+                            <button (click)="deleteInvoiceGoodsService(goodsService.id)" style="border: none">
+                                <mat-icon>delete_outline</mat-icon>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Add Goods Service</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <form [formGroup]="goodsServiceForm">
+                            <div class="modal-body">
+
+                                <label for="">Products / Service</label>
+                                <input formControlName="goodsService" type="text" class="form-control">
+                                <mat-error
+                                    *ngIf="goodsServiceForm.get('goodsService')?.hasError('required') && goodsServiceForm.controls['goodsService']?.touched">
+                                    Products / Service required*</mat-error><br>
+                                <br>
+
+                                <label for="">Quantity</label>
+                                <input formControlName="quantity" type="text" class="form-control">
+                                <mat-error
+                                    *ngIf="goodsServiceForm.get('quantity')?.hasError('required') && goodsServiceForm.controls['quantity']?.touched">
+                                    Quantity is required*</mat-error><br>
+                                <br>
+
+                                <label for="">Unit</label>
+                                <input formControlName="unit" type="text" class="form-control">
+                                <mat-error
+                                    *ngIf="goodsServiceForm.get('unit')?.hasError('required') && goodsServiceForm.controls['unit']?.touched">
+                                    Unit is required*</mat-error><br>
+                                <br>
+
+                                <label for="">Unit Price</label>
+                                <input formControlName="unitPrice" type="text" class="form-control">
+                                <mat-error
+                                    *ngIf="goodsServiceForm.get('unitPrice')?.hasError('required') && goodsServiceForm.controls['unitPrice']?.touched">
+                                    Unit Price is required*</mat-error><br>
+                                <br>
+
+                                <label for="">KDV </label>
+                                <input formControlName="kdvRate" type="text" class="form-control">
+                                <mat-error
+                                    *ngIf="goodsServiceForm.get('kdvRate')?.hasError('required') && goodsServiceForm.controls['kdvRate']?.touched">
+                                    KDV is required*</mat-error><br>
+                                <br>
+
+                                <label for="">KDV Price</label>
+                                <input formControlName="kdvPrice" type="text" class="form-control">
+                                <mat-error
+                                    *ngIf="goodsServiceForm.get('kdvPrice')?.hasError('required') && goodsServiceForm.controls['kdvPrice']?.touched">
+                                    KDV Price is required*</mat-error><br>
+                                <br>
+
+                                <label for="">Total Price</label>
+                                <input formControlName="totalPrice" type="text" class="form-control">
+                                <mat-error
+                                    *ngIf="goodsServiceForm.get('totalPrice')?.hasError('required') && goodsServiceForm.controls['totalPrice']?.touched">
+                                    Total Price is required*</mat-error><br>
+                                <br>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button (click)="createInvoiceGoodsService()" type="button" class="btn btn-primary">Save
+                                    changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </mat-expansion-panel>
+
+        <br>
+
+        <mat-expansion-panel >
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Notes
+                </mat-panel-title>
+                <mat-panel-description>
+                    Click for details
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <p></p>
+
+            <form [formGroup]="notesForm">
+                <ol>
+                    <li *ngFor="let note of notesList">{{note.title}}</li>
+                </ol>
+                <div class="row">
+                    <div class="col-8">
+                        <textarea  formControlName="title" name="" id="area" class="form-control"></textarea>
+                        
+                    </div>
+
+                    <div class="col-4">
+                        <button (click)="createInvoiceNotes()" class="btn btn-primary">Add</button>
+                    </div>
+                </div>
+            </form>
+
+
+        </mat-expansion-panel>
+
+        <br>
+
+        <mat-expansion-panel >
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Total Price
+                </mat-panel-title>
+                <mat-panel-description>
+                    Click for details
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <div class="row">
+                <div class="col-6">
+                    <h3>Total Price:</h3><br>
+                    <h3>Total Amount Including Taxes:</h3><br>
+                    <h3>Amount To Be Paid:</h3>
+                </div>
+                <div class="col-6">
+                    <input type="text" class="form-control mb-1">
+                    <input type="text" class="form-control mb-1">
+                    <input type="text" class="form-control mb-1">
+                </div>
+            </div>
+
+        </mat-expansion-panel>
+        <br>
+        <button (click)="createInvoice()" mat-raised-button color="primary">Save Invoice</button>
+
+    </mat-accordion>
+</form>

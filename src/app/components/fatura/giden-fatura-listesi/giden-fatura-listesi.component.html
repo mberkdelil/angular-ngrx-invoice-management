@@ -1,0 +1,80 @@
+<h2>Outgoing Invoice List </h2>
+
+
+<table id="example" class="table table-striped table-bordered" style="width:100%">
+  <thead>
+    <tr>
+      <th>Invoice No</th>
+      <th>Full Name</th>
+      <th>Tckn</th>
+      <th>Invoice Date</th>
+      <th>Total Kdv</th>
+      <th>Total Price</th>
+      <th>Invoice Price</th>
+      <th>Scenario Type</th>
+      <th>Invoice Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id="print-section" *ngFor="let item of gidenFaturaListesi">
+      <td>{{item.faturaNo}}</td>
+      <td>{{item.adSoyad}}</td>
+      <td>{{item.tckn}}</td>
+      <td>{{item.faturaTarihi}}</td>
+      <td>{{item.toplamKdv}}</td>
+      <td>{{item.odenecekTutar}}</td>
+      <td>{{item.faturaTutari}}</td>
+      <td>{{item.senaryoTipi}}</td>
+      <td>{{item.faturaDurumu}}</td>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>Select Actions</mat-label>
+          <mat-select>
+            <mat-option>
+              <button (click)="printDocument(item)" printSectionId="print-section" ngxPrint mat-raised-button
+                color="primary" style="width: 100%;">
+                <mat-icon>print</mat-icon>Print
+              </button>
+            </mat-option>
+            <mat-option>
+              <button (click)="downloadInvoicePdf(item)" mat-raised-button color="light" style="width: 100%;">
+                <mat-icon>picture_as_pdf</mat-icon>Download PDF
+              </button>
+            </mat-option>
+            <mat-option>
+              <button (click)="downloadInvoiceXml(item)" mat-raised-button color="light" style="width: 100%;">
+                <mat-icon>extension</mat-icon>Download XML
+              </button>
+            </mat-option>
+            <mat-option>
+              <button (click)="removeToArchive(item)" mat-raised-button color="accent" style="width: 100%;">
+                <mat-icon>archive</mat-icon>Remove to Archive
+              </button>
+            </mat-option>
+            <mat-option>
+              <button (click)="deleteInvoice(item.faturaNo)" mat-raised-button color="light" style="width: 100%;">
+                <mat-icon>delete_sweep</mat-icon>Delete
+              </button>
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </tr>
+
+  </tbody>
+  <tfoot>
+    <tr>
+      <th>Invoice No</th>
+      <th>Full Name</th>
+      <th>Tckn</th>
+      <th>Invoice Date</th>
+      <th>Total Kdv</th>
+      <th>Total Price</th>
+      <th>Invoice Price</th>
+      <th>Scenario Type</th>
+      <th>Invoice Status</th>
+      <th>Actions</th>
+    </tr>
+  </tfoot>
+</table>

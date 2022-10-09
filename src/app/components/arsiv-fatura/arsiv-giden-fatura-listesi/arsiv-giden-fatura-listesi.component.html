@@ -1,0 +1,96 @@
+<mat-form-field appearance="standard">
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Search Invoice" #input>
+  </mat-form-field>
+  
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+  
+      <!-- ID Column -->
+      <ng-container matColumnDef="faturaNo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Invoice No </th>
+        <td mat-cell *matCellDef="let row"> {{row.faturaNo}} </td>
+      </ng-container>
+  
+      <!-- Progress Column -->
+      <ng-container matColumnDef="tckn">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Tckn </th>
+        <td mat-cell *matCellDef="let row"> {{row.tckn}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="adSoyad">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Tckn </th>
+        <td mat-cell *matCellDef="let row"> {{row.adSoyad}} </td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="faturaTarihi">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Invoice Date </th>
+        <td mat-cell *matCellDef="let row"> {{row.faturaTarihi}} </td>
+      </ng-container>
+  
+      <!-- Fruit Column -->
+      <ng-container matColumnDef="toplamKdv">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Total KDV </th>
+        <td mat-cell *matCellDef="let row"> {{row.toplamKdv}} </td>
+      </ng-container>
+  
+      <!-- Fruit Column -->
+      <ng-container matColumnDef="odenecekTutar">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Total Price </th>
+        <td mat-cell *matCellDef="let row"> {{row.odenecekTutar}} </td>
+      </ng-container>
+  
+      <!-- Fruit Column -->
+      <ng-container matColumnDef="faturaTutari">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Invoice Price </th>
+        <td mat-cell *matCellDef="let row"> {{row.faturaTutari}} </td>
+      </ng-container>
+  
+      <!-- Fruit Column -->
+      <ng-container matColumnDef="senaryoTipi">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Scenario Type </th>
+        <td mat-cell *matCellDef="let row"> {{row.senaryoTipi}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="faturaDurumu">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Invoice Status </th>
+        <td mat-cell *matCellDef="let row"> {{row.faturaDurumu}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="işlemler">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
+        <td mat-cell *matCellDef="let row">
+          <mat-form-field appearance="fill">
+            <mat-label>Select an option</mat-label>
+            <mat-select [(value)]="selected">
+              <mat-option value="none" selected>None</mat-option>
+  
+              <mat-option value="option1">
+                <mat-icon>delete_outline</mat-icon>Delete Invoice
+              </mat-option>
+    
+              <mat-option value="option3">
+                <mat-icon>print</mat-icon>Print
+              </mat-option>
+  
+              <mat-option value="option3">
+                <mat-icon>cloud_download</mat-icon>Download
+              </mat-option>
+              
+            </mat-select>
+          </mat-form-field>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+      </tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+  </div>
