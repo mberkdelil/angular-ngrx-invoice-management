@@ -1,27 +1,23 @@
-# Invoice
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.2.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![Screenshot_2](https://user-images.githubusercontent.com/91894010/194767653-f4116001-4385-4af2-96f3-0ac598181141.jpg)
+![Screenshot_3](https://user-images.githubusercontent.com/91894010/194767657-b52dceb9-449e-4552-8bdc-a19fc2ea060d.jpg)
+![Screenshot_4](https://user-images.githubusercontent.com/91894010/194767662-920730b7-9f28-4a20-a356-1ee6792eaa40.jpg)
+![Screenshot_5](https://user-images.githubusercontent.com/91894010/194767669-1a991461-3ef6-4aaf-ac03-b8f8d8296d4b.jpg)
+![Screenshot_6](https://user-images.githubusercontent.com/91894010/194767670-89e7288e-a5a1-400c-8200-4e6c23782c3c.jpg)
+![Screenshot_7](https://user-images.githubusercontent.com/91894010/194767671-dd31174e-41a8-4097-8ba5-5690040a8aec.jpg)
+![Screenshot_8](https://user-images.githubusercontent.com/91894010/194767675-196f2bb0-6405-4604-9afa-a072e0411bb2.jpg)
+![Screenshot_9](https://user-images.githubusercontent.com/91894010/194767676-3076d162-53b1-45b1-beda-e9df32e5c020.jpg)
+![Screenshot_10](https://user-images.githubusercontent.com/91894010/194767680-60365c8d-8a44-4289-af7d-11b004972cfd.jpg)
+![Screenshot_11](https://user-images.githubusercontent.com/91894010/194767682-32cba89d-0c6e-4be6-9440-50299552ac35.jpg)
+![Screenshot_12](https://user-images.githubusercontent.com/91894010/194767689-807bc459-3889-4180-93ed-9d7030e00c86.jpg)
+![Screenshot_13](https://user-images.githubusercontent.com/91894010/194767690-3c97061a-2a0b-4dc1-b442-6329d633f4b5.jpg)
+![Screenshot_14](https://user-images.githubusercontent.com/91894010/194767692-cfb4561e-20b8-40b7-a9fe-10b9a4ede921.jpg)
+![Screenshot_15](https://user-images.githubusercontent.com/91894010/194767695-73ae4bc3-1d69-4ad4-b7fd-37ac055a0285.jpg)
+![Screenshot_16](https://user-images.githubusercontent.com/91894010/194767697-5fe1e2ab-642b-4b33-bb6a-b24a6790f55c.jpg)
+![Screenshot_17](https://user-images.githubusercontent.com/91894010/194767699-bf43a2ed-0082-4b8d-b87f-b1f8cca835d9.jpg)
+![Screenshot_18](https://user-images.githubusercontent.com/91894010/194767704-00f60926-1bf9-477b-81e2-b66d0ecbc3c3.jpg)
+![Screenshot_19](https://user-images.githubusercontent.com/91894010/194767708-416918aa-49a0-4064-ab29-982f2f9edb68.jpg)
+![Screenshot_20](https://user-images.githubusercontent.com/91894010/194767709-90ab5a30-c421-45ab-9a7f-7347fcf30f84.jpg)
+![Screenshot_21](https://user-images.githubusercontent.com/91894010/194767712-4553d41b-191b-4fd2-9928-b3197a240720.jpg)
+![Screenshot_22](https://user-images.githubusercontent.com/91894010/194767715-47ef4c84-5f09-4ca6-b20e-4ff700dc07cd.jpg)
+![Screenshot_23](https://user-images.githubusercontent.com/91894010/194767718-5df18701-0564-4c2a-ae8a-e13744b223cf.jpg)
+![Screenshot_24](https://user-images.githubusercontent.com/91894010/194767719-be16f75c-573f-4e10-8c78-1a2584412473.jpg)
